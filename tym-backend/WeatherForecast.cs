@@ -1,4 +1,4 @@
-namespace TYM_Backend
+namespace tym_backend
 {
 	public class WeatherForecast
 	{

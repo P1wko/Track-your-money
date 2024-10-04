@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace TYM_Backend.Controllers
+namespace tym_backend.Controllers
 {
 	[ApiController]
 	[Route("[controller]")]

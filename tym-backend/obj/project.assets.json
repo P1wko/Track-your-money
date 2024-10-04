@@ -434,11 +434,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Michal\\Projekt\\Track-your-money\\TYM Backend\\TYM Backend.csproj",
-      "projectName": "TYM Backend",
-      "projectPath": "F:\\Michal\\Projekt\\Track-your-money\\TYM Backend\\TYM Backend.csproj",
+      "projectUniqueName": "F:\\Michal\\Projekt\\Track-your-money\\tym-backend\\tym-backend.csproj",
+      "projectName": "tym-backend",
+      "projectPath": "F:\\Michal\\Projekt\\Track-your-money\\tym-backend\\tym-backend.csproj",
       "packagesPath": "C:\\Users\\mimin\\.nuget\\packages\\",
-      "outputPath": "F:\\Michal\\Projekt\\Track-your-money\\TYM Backend\\obj\\",
+      "outputPath": "F:\\Michal\\Projekt\\Track-your-money\\tym-backend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
