@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using tym_backend.Models;
 
@@ -11,9 +12,11 @@ using tym_backend.Models;
 namespace tym_backend.Migrations
 {
     [DbContext(typeof(backendContext))]
-    partial class backendContextModelSnapshot : ModelSnapshot
+    [Migration("20241006084239_Second Migration")]
+    partial class SecondMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,22 +46,6 @@ namespace tym_backend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Transactions");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            IsExpense = true,
-                            Title = "First transaction",
-                            TransactionDate = new DateTime(2024, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            IsExpense = false,
-                            Title = "Second transaction",
-                            TransactionDate = new DateTime(2023, 4, 26, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
                 });
 #pragma warning restore 612, 618
         }
