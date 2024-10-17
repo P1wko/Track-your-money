@@ -1,12 +1,11 @@
 import Footer from "./footer";
-import Nav from "./navbar";
+import Nav from "./sidebar";
 
 export default function DashboardLayout({children} : Readonly<{children : React.ReactNode}>) {
     return (
-        <div>
+        <div className="flex">
             <Nav />
-            <main>{children}</main>
-            <Footer />
+            <main className="w-full">{children}</main>
         </div>
     )
 }
