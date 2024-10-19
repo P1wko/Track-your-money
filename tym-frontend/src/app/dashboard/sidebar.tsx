@@ -9,9 +9,9 @@ export default function Sidebar() {
             <HomeIcon className="h-6 w-6 mr-3" aria-hidden="true"/>
             Dashboard
           </Link>
-          <Link href="/dashboard/expenses" className="flex items-center px-2 py-2 text-sm font-medium rounded-md hover:bg-gray-700">
+          <Link href="/dashboard/history" className="flex items-center px-2 py-2 text-sm font-medium rounded-md hover:bg-gray-700">
             <HomeIcon className="h-6 w-6 mr-3" aria-hidden="true"/>
-            Expenses
+            History
           </Link>
           <Link href="/dashboard/analitycs" className="flex items-center px-2 py-2 text-sm font-medium rounded-md hover:bg-gray-700">
             <HomeIcon className="h-6 w-6 mr-3" aria-hidden="true"/>

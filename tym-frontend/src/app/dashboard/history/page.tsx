@@ -5,6 +5,11 @@ import { useState } from "react"
 
 export default function Expenses() {
     const [showCreateForm, setShowCreateForm] = useState(false)
+
+    const [title, setTitle] = useState("")
+    const [date, setDate] = useState(new Date("2000-1-1"))
+    const [isExpense, setIsExpense] = useState(false);
+
     const dummyData = [
         {
             id: 1,
@@ -20,6 +25,18 @@ export default function Expenses() {
         }
     ]
 
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        const formData = {
+            title,
+            date,
+            isExpense
+        }
+
+        console.log(formData);
+    }
+
     const toggleCreateForm = () => setShowCreateForm(!showCreateForm);
 
     return (
@@ -28,19 +45,26 @@ export default function Expenses() {
                 <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
                     <div className="bg-white p-8 rounded-lg shadow-lg w-96">
                         <h2 className="text-2xl font-bold mb-4">Formularz</h2> 
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <div className="mb-4">
                                 <label className="block text-gray-700 text-sm font-bold mb-2">
-                                Name
+                                Title
                                 </label>
-                                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Your Name" />
+                                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Transaction Title" value={title} onChange={(e) => setTitle(e.target.value)}/>
                             </div>
 
                             <div className="mb-4">
                                 <label className="block text-gray-700 text-sm font-bold mb-2">
-                                Email
+                                Transaction Date
                                 </label>
-                                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="email" placeholder="Your Email" />
+                                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="date" value="2020-01-01" onChange={(e) => setDate(new Date(e.target.value))}/>
+                            </div>
+
+                            <div className="mb-4">
+                                <label className="inline-flex items-center">
+                                    <input type="checkbox" className="form-checkbox h-5 w-5 text-blue-600" checked={isExpense} onChange={(e) => setIsExpense(e.target.checked)}/>
+                                    <span className="ml-2 text-gray-700">Expense</span>
+                                </label>
                             </div>
 
                             <div className="flex justify-end">
@@ -69,7 +93,7 @@ export default function Expenses() {
                         <th className="px-4 py-2 border">ID</th>
                         <th className="px-4 py-2 border">Title</th>
                         <th className="px-4 py-2 border">Transaction Date</th>
-                        <th className="px-4 py-2 border">Date</th>
+                        <th className="px-4 py-2 border">Type</th>
                     </tr>
                 </thead>
                 <tbody>
